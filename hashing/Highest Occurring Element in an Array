@@ -25,3 +25,27 @@ public class Main {
         System.out.println("highest occuring element is " + highestOccurring(arr));
     }
 }
+//optimal
+import java.util.HashMap;
+public class Haha {
+    public static int maxFreq(int[] arr) {
+        int maxcount = 0;
+        int n=arr.length;
+        int result = -1;
+        HashMap<Integer,Integer> map = new HashMap<>();
+        for(int i=0;i<n;i++){
+            map.put(arr[i],map.getOrDefault(arr[i],0)+1);
+
+        if(map.get(arr[i]) > maxcount){
+            maxcount=map.get(arr[i]);
+            result = arr[i];
+        }
+
+        }
+        return result;
+        }
+        public static void main(String[] args) {
+            int[] arr = {2,5,2,4,3,4,4,7,4,45,4,5};
+            System.out.println("highest repeating element in the given array is" + maxFreq(arr));
+        }
+}
